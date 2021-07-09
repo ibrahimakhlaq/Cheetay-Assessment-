@@ -12,7 +12,6 @@ def longestPalin(S):
 
     N = len(S)
     maxpal = 1
-    start = 0
 
     longpal = S[0]
     for i in range(N):
