@@ -9,8 +9,9 @@ def chooseandswap(str):
         min_index = copy_str.index(Min)
 
         if j == min_index:
-            copy_str = copy_str.replace(copy_str[j], "~")
-
+            lst = list(copy_str)
+            lst[j] = "~"
+            copy_str = "".join(lst)
         if j != min_index and copy_str[j] != '~':
             swapper_index = j
             break
@@ -20,7 +21,7 @@ def chooseandswap(str):
         c2 = str[swapper_index]
 
         lst = list(str)
-        for i in range(len(lst)):
+        for i in range(swapper_index, len(lst)):
             if (lst[i] == c1):
                 lst[i] = c2
 
@@ -31,5 +32,6 @@ def chooseandswap(str):
         return str
 
 
-str = "aaaabbbbbecccdd"
-chooseandswap(str)
+str = "abaaaab"
+print(chooseandswap(str))
+
